@@ -1,0 +1,53 @@
+---
+title: 
+author: 
+date: "`r Sys.Date()`"
+output: 
+  github_document:
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r message=FALSE, warning=FALSE}
+# Libraries
+library(tidyverse)
+library(readxl)
+
+# read in data 
+class_data <- read_excel("/Users/ChrisLeBoa/GitHub/Biostatistics/HRP/data-raw/classdata.xlsx")
+#===============================================================================
+
+# Code
+
+```
+
+## Vis data
+```{r}
+summary(class_data)
+```
+```{r}
+class_data %>% 
+  summarise(av_coffee = mean(coffee), sd_coffee = sd(coffee)
+```
+#HISTOGRAM 
+```{r}
+class_data %>% 
+  ggplot(aes(wakeup)) + 
+  geom_histogram(bins = 10, boundary = 4, , fill = "red", color = "black") + 
+  scale_x_continuous(breaks = scales::breaks_width(1)) +
+  labs(
+    title = "Histogram of Wake Up Times",
+    x = "Wake up time", 
+    y = "Frequency", 
+    caption = "source: Class data .xlsx"
+  )
+  
+  
+  
+  
+  
+```
+
