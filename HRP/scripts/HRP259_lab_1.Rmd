@@ -45,9 +45,5 @@ class_data %>%
     caption = "source: Class data .xlsx"
   )
   
-  
-  
-  
-  
 ```
 

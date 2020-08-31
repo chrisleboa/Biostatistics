@@ -1,0 +1,31 @@
+---
+title: "HRP259_lab_2"
+author: "Chris LeBoa"
+date: "8/31/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+knitr::opts_chunk$set(echo = TRUE)
+
+#Load data 
+car_data <- read_csv("/Users/ChrisLeBoa/GitHub/Biostatistics/HRP/data-raw/cardata.csv")
+```
+
+### Plotting 
+```{r}
+car_data %>% 
+  mutate(rate = `Crude Rate`) %>% 
+  ggplot(aes(Year, rate)) + 
+  geom_point() 
+```
+```{r}
+car_data %>% 
+  mutate(rate = `Crude Rate`) %>% 
+  ggplot(aes(Year, rate)) + 
+  geom_line() +
+  geom_point(shape = 21, fill = "red", color = "black", size = 2.5)  
+  
+```
+
